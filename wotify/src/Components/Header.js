@@ -7,6 +7,13 @@ import { useDataLayerValue, useDatalLayerValue } from '../Dal/DataLayer';
 function Header() {
     const [ {user }, dispatch] = useDataLayerValue();
 
+    function handleSearchChange(event) {
+        dispatch({
+            type: 'SET_SEARCH',
+            search : event.target.value
+          });
+    }
+
     return (
         <div className='header'>
             <div className='header__left'>
@@ -14,6 +21,7 @@ function Header() {
                 <input 
                     placeholder='Search for Artists, Songs, or Podcasts etc' 
                     type='text'
+                    onChange={handleSearchChange}
                 />
             </div>
 

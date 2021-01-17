@@ -27,11 +27,24 @@ const reducer = (state, action) => {
                 ...state,
                 playlists: action.playlists,
             }
-        case 'SET_DISCOVER_WEEKLY':
+        case 'SET_ACTIVE_PLAYLIST':
             return {
                 ...state,
-                discover_weekly: action.discover_weekly,
+                active_playlist: action.active_playlist,
             }
+
+        case 'SET_SPOTIFY':
+            return {
+                ...state,
+                spotify: action.spotify,
+            }
+
+        case 'SET_SEARCH':
+            return {
+                ...state,
+                search: action.search?.toLowerCase(),
+            }
+
         default: 
             return state;   
 
