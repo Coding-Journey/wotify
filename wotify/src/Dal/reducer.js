@@ -44,6 +44,12 @@ const reducer = (state, action) => {
                 ...state,
                 search: action.search?.toLowerCase(),
             }
+        
+        case 'SET_TRACK': 
+            return {
+                ...state,
+                track: action.track,
+            }       
 
         default: 
             return state;   
